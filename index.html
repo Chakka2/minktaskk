@@ -4,21 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Open Graph Meta Tags for WhatsApp/Social Sharing -->
+  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Join MinTask — Earn ₹20 Per Referral!" />
-  <meta property="og:description" content="Refer friends and earn ₹20 each! 4 level earnings. Withdraw anytime via UPI. Join now!" />
+  <meta property="og:description" content="Refer friends and earn ₹20 each! 4 level earnings. Withdraw anytime via UPI." />
   <meta property="og:image" content="https://chakka2.github.io/minktaskk/mintask-share.png" />
   <meta property="og:url" content="https://chakka2.github.io/minktaskk" />
   <meta property="og:type" content="website" />
 
   <title>MinTask — Refer. Earn. Repeat.</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 
-  <!-- Firebase Realtime DB SDK (compat) -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
 
@@ -31,10 +29,6 @@
       --blue-vivid: #2196F3;
       --cyan:       #00BCD4;
       --purple:     #7C3AED;
-      --pink:       #EC4899;
-      --green:      #22C55E;
-      --amber:      #F59E0B;
-      --white:      #FFFFFF;
       --off-white:  #F7F9FC;
       --n100:       #EEF2F7;
       --n200:       #DDE3EE;
@@ -48,7 +42,6 @@
     }
 
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--off-white);
@@ -56,7 +49,6 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
-
     body::before {
       content: '';
       position: fixed; inset: 0; z-index: -1;
@@ -74,10 +66,7 @@
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(0,0,0,.06);
     }
-    .nav-logo {
-      display: flex; align-items: center; gap: 10px;
-      text-decoration: none;
-    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-logo-icon {
       width: 38px; height: 38px; border-radius: 12px;
       background: var(--grad-cyan);
@@ -85,10 +74,7 @@
       font-size: 18px; font-weight: 900; color: #fff;
       font-family: 'Syne', sans-serif;
     }
-    .nav-logo-text {
-      font-family: 'Syne', sans-serif;
-      font-size: 20px; font-weight: 800; color: var(--n900);
-    }
+    .nav-logo-text { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--n900); }
     .nav-badge {
       font-size: 11px; font-weight: 600; color: var(--blue-mid);
       background: rgba(33,150,243,.1); padding: 4px 10px;
@@ -116,8 +102,7 @@
       font-family: 'Syne', sans-serif;
       font-size: clamp(44px, 8vw, 88px);
       font-weight: 800; line-height: 1.0;
-      color: var(--n900);
-      margin-bottom: 24px;
+      color: var(--n900); margin-bottom: 24px;
       animation: fadeUp .6s .1s ease both;
     }
     .hero-title span {
@@ -127,25 +112,20 @@
     }
     .hero-sub {
       font-size: clamp(16px, 2.2vw, 20px);
-      font-weight: 400; color: var(--n600);
-      max-width: 540px; line-height: 1.7;
+      color: var(--n600); max-width: 540px; line-height: 1.7;
       margin-bottom: 44px;
       animation: fadeUp .6s .2s ease both;
     }
 
     .ref-banner {
-      display: none;
-      align-items: center; gap: 10px;
+      display: none; align-items: center; gap: 10px;
       background: rgba(34,197,94,.08);
       border: 1.5px solid rgba(34,197,94,.3);
-      border-radius: 14px;
-      padding: 12px 20px;
-      margin-bottom: 28px;
+      border-radius: 14px; padding: 12px 20px; margin-bottom: 28px;
       font-size: 14px; font-weight: 600; color: #15803d;
       animation: fadeUp .5s ease both;
     }
     .ref-banner.visible { display: flex; }
-    .ref-banner-icon { font-size: 20px; }
 
     .btn-download {
       display: inline-flex; align-items: center; gap: 12px;
@@ -161,31 +141,25 @@
       position: relative; overflow: hidden;
     }
     .btn-download::after {
-      content: '';
-      position: absolute; inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: linear-gradient(rgba(255,255,255,.15), transparent);
       border-radius: inherit;
     }
     .btn-download:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(13,71,161,.4); }
     .btn-download:active { transform: translateY(0); }
-    .btn-download-icon { font-size: 22px; }
-
     .btn-download-sub {
-      font-size: 12px; color: var(--n400);
-      margin-top: 12px;
+      font-size: 12px; color: var(--n400); margin-top: 12px;
       animation: fadeUp .6s .4s ease both;
     }
 
     .hero-stats {
-      display: flex; align-items: center; gap: 32px;
-      margin-top: 56px;
+      display: flex; align-items: center; gap: 32px; margin-top: 56px;
       animation: fadeUp .6s .5s ease both;
       flex-wrap: wrap; justify-content: center;
     }
     .hero-stat { text-align: center; }
     .hero-stat-val {
-      font-family: 'Syne', sans-serif;
-      font-size: 28px; font-weight: 800;
+      font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800;
       background: var(--grad-cyan);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -195,36 +169,27 @@
 
     .features { padding: 100px 5vw; }
     .section-label {
-      text-align: center;
-      font-size: 12px; font-weight: 600; letter-spacing: .8px;
-      text-transform: uppercase; color: var(--blue-vivid);
-      margin-bottom: 14px;
+      text-align: center; font-size: 12px; font-weight: 600;
+      letter-spacing: .8px; text-transform: uppercase;
+      color: var(--blue-vivid); margin-bottom: 14px;
     }
     .section-title {
-      text-align: center;
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(28px, 4vw, 44px);
-      font-weight: 800; color: var(--n900);
-      margin-bottom: 60px;
+      text-align: center; font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 4vw, 44px); font-weight: 800;
+      color: var(--n900); margin-bottom: 60px;
     }
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      max-width: 1100px; margin: 0 auto;
+      gap: 20px; max-width: 1100px; margin: 0 auto;
     }
     .feat-card {
-      background: #fff;
-      border: 1px solid var(--n100);
-      border-radius: 24px;
-      padding: 32px 28px;
+      background: #fff; border: 1px solid var(--n100);
+      border-radius: 24px; padding: 32px 28px;
       transition: transform .25s, box-shadow .25s;
       position: relative; overflow: hidden;
     }
-    .feat-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    }
+    .feat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
     .feat-card:nth-child(1)::before { background: var(--grad-cyan); }
     .feat-card:nth-child(2)::before { background: var(--grad-purp); }
     .feat-card:nth-child(3)::before { background: var(--grad-gold); }
@@ -239,95 +204,63 @@
     .feat-card:nth-child(2) .feat-icon { background: rgba(124,58,237,.1); }
     .feat-card:nth-child(3) .feat-icon { background: rgba(245,158,11,.1); }
     .feat-card:nth-child(4) .feat-icon { background: rgba(34,197,94,.1); }
-    .feat-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 19px; font-weight: 700; color: var(--n900);
-      margin-bottom: 10px;
-    }
+    .feat-title { font-family: 'Syne', sans-serif; font-size: 19px; font-weight: 700; color: var(--n900); margin-bottom: 10px; }
     .feat-desc { font-size: 14px; color: var(--n600); line-height: 1.7; }
-    .feat-chip {
-      display: inline-block;
-      margin-top: 16px;
-      font-size: 12px; font-weight: 700;
-      padding: 5px 14px; border-radius: 20px;
-    }
+    .feat-chip { display: inline-block; margin-top: 16px; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 20px; }
     .feat-card:nth-child(1) .feat-chip { background: rgba(0,188,212,.1); color: #0097A7; }
     .feat-card:nth-child(2) .feat-chip { background: rgba(124,58,237,.1); color: var(--purple); }
     .feat-card:nth-child(3) .feat-chip { background: rgba(245,158,11,.1); color: #B45309; }
     .feat-card:nth-child(4) .feat-chip { background: rgba(34,197,94,.1); color: #15803d; }
 
     .how { padding: 80px 5vw; background: #fff; }
-    .steps {
-      display: flex; gap: 0;
-      max-width: 900px; margin: 0 auto;
-      flex-wrap: wrap; justify-content: center;
-    }
+    .steps { display: flex; gap: 0; max-width: 900px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
     .step {
       flex: 1; min-width: 220px;
       display: flex; flex-direction: column; align-items: center;
-      text-align: center; padding: 28px 20px;
-      position: relative;
+      text-align: center; padding: 28px 20px; position: relative;
     }
     .step:not(:last-child)::after {
-      content: '→';
-      position: absolute; right: -10px; top: 44px;
+      content: '→'; position: absolute; right: -10px; top: 44px;
       font-size: 22px; color: var(--n200);
     }
     .step-num {
       width: 54px; height: 54px; border-radius: 50%;
       background: var(--grad-cyan);
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Syne', sans-serif;
-      font-size: 20px; font-weight: 800; color: #fff;
-      margin-bottom: 16px;
-      box-shadow: 0 8px 24px rgba(0,188,212,.3);
+      font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: #fff;
+      margin-bottom: 16px; box-shadow: 0 8px 24px rgba(0,188,212,.3);
     }
-    .step-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 16px; font-weight: 700; color: var(--n900);
-      margin-bottom: 8px;
-    }
+    .step-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--n900); margin-bottom: 8px; }
     .step-desc { font-size: 13px; color: var(--n600); line-height: 1.6; }
 
-    .cta-section {
-      padding: 100px 5vw;
-      display: flex; flex-direction: column; align-items: center;
-      text-align: center;
-    }
+    .cta-section { padding: 100px 5vw; display: flex; flex-direction: column; align-items: center; text-align: center; }
     .cta-card {
-      background: var(--grad-hero);
-      border-radius: 32px;
-      padding: 64px 5vw;
-      max-width: 800px; width: 100%;
+      background: var(--grad-hero); border-radius: 32px;
+      padding: 64px 5vw; max-width: 800px; width: 100%;
       position: relative; overflow: hidden;
     }
     .cta-card::before {
-      content: '';
-      position: absolute; top: -60px; right: -60px;
+      content: ''; position: absolute; top: -60px; right: -60px;
       width: 250px; height: 250px; border-radius: 50%;
       background: rgba(255,255,255,.06);
     }
     .cta-card::after {
-      content: '';
-      position: absolute; bottom: -40px; left: -40px;
+      content: ''; position: absolute; bottom: -40px; left: -40px;
       width: 160px; height: 160px; border-radius: 50%;
       background: rgba(255,255,255,.04);
     }
     .cta-title {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(28px, 4vw, 46px);
-      font-weight: 800; color: #fff;
-      margin-bottom: 14px; position: relative; z-index: 1;
+      font-family: 'Syne', sans-serif; font-size: clamp(28px, 4vw, 46px);
+      font-weight: 800; color: #fff; margin-bottom: 14px;
+      position: relative; z-index: 1;
     }
     .cta-sub {
       font-size: 17px; color: rgba(255,255,255,.75);
-      margin-bottom: 36px; position: relative; z-index: 1;
-      max-width: 480px;
+      margin-bottom: 36px; position: relative; z-index: 1; max-width: 480px;
     }
     .btn-download-white {
       display: inline-flex; align-items: center; gap: 12px;
-      padding: 18px 44px;
-      background: #fff;
+      padding: 18px 44px; background: #fff;
       color: var(--blue-mid); font-size: 18px; font-weight: 800;
       font-family: 'Syne', sans-serif;
       border: none; border-radius: 16px; cursor: pointer;
@@ -339,15 +272,15 @@
     .btn-download-white:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,.28); }
 
     footer {
-      padding: 28px 5vw;
-      text-align: center;
+      padding: 28px 5vw; text-align: center;
       font-size: 13px; color: var(--n400);
       border-top: 1px solid var(--n100);
     }
     footer a { color: var(--blue-vivid); text-decoration: none; }
 
     .toast {
-      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(80px);
+      position: fixed; bottom: 28px; left: 50%;
+      transform: translateX(-50%) translateY(80px);
       background: var(--n900); color: #fff;
       padding: 12px 24px; border-radius: 40px;
       font-size: 14px; font-weight: 500;
@@ -372,7 +305,6 @@
 </head>
 <body>
 
-  <!-- Nav -->
   <nav>
     <a href="#" class="nav-logo">
       <div class="nav-logo-icon">&#8377;</div>
@@ -381,12 +313,11 @@
     <span class="nav-badge">Free to Download</span>
   </nav>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="hero-eyebrow">&#127881; Earn Real Money with Every Referral</div>
 
     <div class="ref-banner" id="refBanner">
-      <span class="ref-banner-icon">&#127873;</span>
+      <span>&#127873;</span>
       <span>Referral code applied! Download the app to claim your bonus.</span>
     </div>
 
@@ -397,10 +328,9 @@
       Share your link, get &#8377;20 per friend who joins &mdash; up to 4 levels deep.
     </p>
 
-    <a href="#" class="btn-download" id="downloadBtn" onclick="handleDownload(event)">
-      <span class="btn-download-icon">&#11015;&#65039;</span>
-      Download MinTask &mdash; Free
-    </a>
+    <button class="btn-download" id="downloadBtn" onclick="handleDownload(event)">
+      &#11015;&#65039; &nbsp;Download MinTask &mdash; Free
+    </button>
     <p class="btn-download-sub">APK &middot; Android &middot; No Play Store needed</p>
 
     <div class="hero-stats">
@@ -421,7 +351,6 @@
     </div>
   </section>
 
-  <!-- Features -->
   <section class="features">
     <p class="section-label">Why MinTask?</p>
     <h2 class="section-title">Everything you need to earn</h2>
@@ -430,47 +359,34 @@
       <div class="feat-card">
         <div class="feat-icon">&#128184;</div>
         <div class="feat-title">Instant Referral Earnings</div>
-        <p class="feat-desc">
-          Earn &#8377;20 the moment your referred friend activates their account.
-          No delays, no conditions &mdash; money lands directly in your wallet.
-        </p>
+        <p class="feat-desc">Earn &#8377;20 the moment your referred friend activates their account. No delays, no conditions.</p>
         <span class="feat-chip">&#8377;20 per friend</span>
       </div>
 
       <div class="feat-card">
         <div class="feat-icon">&#128081;</div>
         <div class="feat-title">4-Level Deep Earning</div>
-        <p class="feat-desc">
-          With our Tier Plan, earn from your friends' friends &mdash; up to 4 levels.
-          L2 earns &#8377;2, L3 earns &#8377;1, L4 earns &#8377;0.50 per activation automatically.
-        </p>
+        <p class="feat-desc">Earn from your friends' friends &mdash; up to 4 levels. L2 earns &#8377;2, L3 earns &#8377;1, L4 earns &#8377;0.50 automatically.</p>
         <span class="feat-chip">Passive income</span>
       </div>
 
       <div class="feat-card">
         <div class="feat-icon">&#9889;</div>
         <div class="feat-title">Instant UPI Withdrawals</div>
-        <p class="feat-desc">
-          Withdraw your earnings directly to any UPI ID &mdash; GPay, PhonePe, Paytm.
-          Fast processing, straight to your account.
-        </p>
+        <p class="feat-desc">Withdraw directly to any UPI ID &mdash; GPay, PhonePe, Paytm. Fast processing, straight to your account.</p>
         <span class="feat-chip">Any UPI app</span>
       </div>
 
       <div class="feat-card">
         <div class="feat-icon">&#128274;</div>
         <div class="feat-title">Safe &amp; Transparent</div>
-        <p class="feat-desc">
-          Powered by Firebase &mdash; all balances, referrals and withdrawals are
-          stored securely in real-time. Your money is always visible and protected.
-        </p>
+        <p class="feat-desc">Powered by Firebase &mdash; all balances, referrals and withdrawals stored securely in real-time.</p>
         <span class="feat-chip">Firebase secured</span>
       </div>
 
     </div>
   </section>
 
-  <!-- How it works -->
   <section class="how">
     <p class="section-label">Simple as 1-2-3</p>
     <h2 class="section-title">How it works</h2>
@@ -488,37 +404,31 @@
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-title">Share &amp; Earn</div>
-        <p class="step-desc">Share your link. Get &#8377;20 for every friend who joins and activates!</p>
+        <p class="step-desc">Share your link. Get &#8377;20 for every friend who joins!</p>
       </div>
     </div>
   </section>
 
-  <!-- Bottom CTA -->
   <section class="cta-section">
     <div class="cta-card">
       <h2 class="cta-title">Start Earning Today</h2>
       <p class="cta-sub">Join thousands of users earning real money with MinTask. Free download, instant setup.</p>
-      <a href="#" class="btn-download-white" id="downloadBtn2" onclick="handleDownload(event)">
+      <button class="btn-download-white" onclick="handleDownload(event)">
         &#11015;&#65039; &nbsp;Download MinTask Free
-      </a>
+      </button>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 MinTask &middot; Refer. Earn. Repeat. &nbsp;|&nbsp;
-      <a href="/cdn-cgi/l/email-protection#97e4e2e7e7f8e5e3d7fafef9e3eee3f6e4fcb9f8f9fbfef9f2"><span class="__cf_email__" data-cfemail="b9caccc9c9d6cbcdf9d4d0d7cdc0cdd8cad297d6d7d5d0d7dc">[email&#160;protected]</span></a>
+      <a href="mailto:support@mintytask.online">support@mintytask.online</a>
     </p>
   </footer>
 
-  <!-- Toast -->
   <div class="toast" id="toast"></div>
 
-  <!-- Firebase + Referral Logic -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // ════════════════════════════════════════════════════════
-    //  CONFIG — Replace with your actual Firebase config
-    // ════════════════════════════════════════════════════════
+  <script>
+    // ── CONFIG: Replace with your real Firebase values ──────
     const firebaseConfig = {
       apiKey:            "YOUR_API_KEY",
       authDomain:        "YOUR_PROJECT.firebaseapp.com",
@@ -529,28 +439,21 @@
       appId:             "YOUR_APP_ID"
     };
 
-    // APK download URL
+    // ── APK URL ─────────────────────────────────────────────
     const APK_URL = "https://github.com/Chakka2/minktaskk/releases/download/v1.0/mintask.apk";
 
-    // ════════════════════════════════════════════════════════
-    //  Firebase Init
-    // ════════════════════════════════════════════════════════
+    // ── Firebase Init ───────────────────────────────────────
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
 
-    // ════════════════════════════════════════════════════════
-    //  Read ?ref= from URL
-    // ════════════════════════════════════════════════════════
+    // ── Read ?ref= from URL ─────────────────────────────────
     const params  = new URLSearchParams(window.location.search);
     const refCode = (params.get('ref') || params.get('code') || '').trim().toUpperCase();
-
     if (refCode) {
       document.getElementById('refBanner').classList.add('visible');
     }
 
-    // ════════════════════════════════════════════════════════
-    //  Toast helper
-    // ════════════════════════════════════════════════════════
+    // ── Toast helper ────────────────────────────────────────
     function showToast(msg) {
       const el = document.getElementById('toast');
       el.textContent = msg;
@@ -558,40 +461,27 @@
       setTimeout(() => el.classList.remove('show'), 3000);
     }
 
-    // ════════════════════════════════════════════════════════
-    //  Get visitor IP
-    // ════════════════════════════════════════════════════════
+    // ── Get visitor IP ──────────────────────────────────────
     async function getIP() {
       try {
         const res  = await fetch('https://api.ipify.org?format=json', { signal: AbortSignal.timeout(5000) });
         const data = await res.json();
         return data.ip || null;
       } catch (e) {
-        console.warn('IP fetch failed:', e);
         return null;
       }
     }
 
-    // ════════════════════════════════════════════════════════
-    //  Save referral to Firebase Realtime DB
-    //  Path: PendingReferrals/{pushId} = { referrerId, ip, timestamp }
-    // ════════════════════════════════════════════════════════
+    // ── Save referral to Firebase ───────────────────────────
     async function saveReferralToFirebase(referrerId) {
       const ip = await getIP();
-      if (!ip) {
-        console.warn('Could not get IP — referral will not be saved.');
-        return false;
-      }
-
-      const entry = {
-        referrerId: referrerId,
-        ip:         ip,
-        timestamp:  Date.now()
-      };
-
+      if (!ip) return false;
       try {
-        await db.ref('PendingReferrals').push(entry);
-        console.log('Referral saved to Firebase:', entry);
+        await db.ref('PendingReferrals').push({
+          referrerId: referrerId,
+          ip:         ip,
+          timestamp:  Date.now()
+        });
         return true;
       } catch (err) {
         console.error('Firebase write error:', err);
@@ -599,12 +489,9 @@
       }
     }
 
-    // ════════════════════════════════════════════════════════
-    //  Handle Download button click
-    // ════════════════════════════════════════════════════════
+    // ── Handle Download click ───────────────────────────────
     async function handleDownload(event) {
       event.preventDefault();
-
       showToast('Preparing download...');
 
       if (refCode) {
@@ -612,4 +499,18 @@
           const saved = await saveReferralToFirebase(refCode);
           showToast(saved ? 'Referral saved! Starting download...' : 'Starting download...');
         } catch (e) {
-          console.error(e);
+          showToast('Starting download...');
+        }
+        await new Promise(r => setTimeout(r, 800));
+      } else {
+        showToast('Starting download...');
+        await new Promise(r => setTimeout(r, 500));
+      }
+
+      // ✅ This works for GitHub Releases redirects
+      window.location.href = APK_URL;
+    }
+  </script>
+
+</body>
+</html>
