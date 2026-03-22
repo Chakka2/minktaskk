@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Open Graph Meta Tags for WhatsApp/Social Sharing -->
+  <meta property="og:title" content="Join MinTask — Earn ₹30 Per Referral!" />
+  <meta property="og:description" content="Refer friends and earn ₹30 each! 4 level earnings. Withdraw anytime - no limits! Join now with ₹49 activation." />
+  <meta property="og:image" content="https://nakulbusiness91-jpg.github.io/MINTASK/mintask-share.png" />
+  <meta property="og:url" content="https://mintytask.online" />
+  <meta property="og:type" content="website" />
+  
   <title>MinTask — Refer. Earn. Repeat.</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -492,7 +500,7 @@
       messagingSenderId: "YOUR_SENDER_ID",
       appId:             "YOUR_APP_ID"
     };
-    const APK_URL = "https://mintytask.online/mintask.apk";
+    const APK_URL = "https://nakulbusiness91-jpg.github.io/MINTASK/app.apk?v=20260322";
 
     // ════════════════════════════════════════════════════════════════════
     //  Firebase Init
@@ -670,10 +678,11 @@
         await new Promise(r => setTimeout(r, 500));
       }
 
-      // Trigger APK download
-      const link    = document.createElement('a');
-      link.href     = APK_URL;
+      // Trigger APK download with proper attributes
+      const link = document.createElement('a');
+      link.href = APK_URL;
       link.download = 'mintask.apk';
+      link.setAttribute('download', 'mintask.apk');
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -683,4 +692,4 @@
   </script>
 
 </body>
-</html>
+</html
