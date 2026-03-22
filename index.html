@@ -507,7 +507,7 @@
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 MinTask &middot; Refer. Earn. Repeat. &nbsp;|&nbsp;
-      <a href="mailto:support@mintytask.online">support@mintytask.online</a>
+      <a href="/cdn-cgi/l/email-protection#97e4e2e7e7f8e5e3d7fafef9e3eee3f6e4fcb9f8f9fbfef9f2"><span class="__cf_email__" data-cfemail="b9caccc9c9d6cbcdf9d4d0d7cdc0cdd8cad297d6d7d5d0d7dc">[email&#160;protected]</span></a>
     </p>
   </footer>
 
@@ -515,7 +515,7 @@
   <div class="toast" id="toast"></div>
 
   <!-- Firebase + Referral Logic -->
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // ════════════════════════════════════════════════════════
     //  CONFIG — Replace with your actual Firebase config
     // ════════════════════════════════════════════════════════
@@ -530,7 +530,7 @@
     };
 
     // APK download URL
-    const APK_URL = "https://github.com/Chakka2/minktaskk/raw/main/mintask.apk";
+    const APK_URL = "https://github.com/Chakka2/minktaskk/releases/download/v1.0/mintask.apk";
 
     // ════════════════════════════════════════════════════════
     //  Firebase Init
@@ -613,13 +613,3 @@
           showToast(saved ? 'Referral saved! Starting download...' : 'Starting download...');
         } catch (e) {
           console.error(e);
-          showToast('Starting download...');
-        }
-        await new Promise(r => setTimeout(r, 800));
-      } else {
-        showToast('Starting download...');
-        await new Promise(r => setTimeout(r, 500));
-      }
-
-      // Trigger APK download
-      c
