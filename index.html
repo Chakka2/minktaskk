@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <!-- Open Graph Meta Tags for WhatsApp/Social Sharing -->
-  <meta property="og:title" content="Join MinTask — Earn ₹30 Per Referral!" />
-  <meta property="og:description" content="Refer friends and earn ₹30 each! 4 level earnings. Withdraw anytime - no limits! Join now with ₹49 activation." />
+  <meta property="og:title" content="Join MinTask — Earn ₹20 Per Referral!" />
+  <meta property="og:description" content="Refer friends and earn ₹20 each! 4 level earnings. Withdraw anytime via UPI. Join now!" />
   <meta property="og:image" content="https://nakulbusiness91-jpg.github.io/MINTASK/mintask-share.png" />
   <meta property="og:url" content="https://mintytask.online" />
   <meta property="og:type" content="website" />
-  
+
   <title>MinTask — Refer. Earn. Repeat.</title>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
@@ -73,7 +74,10 @@
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(0,0,0,.06);
     }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
     .nav-logo-icon {
       width: 38px; height: 38px; border-radius: 12px;
       background: var(--grad-cyan);
@@ -81,7 +85,10 @@
       font-size: 18px; font-weight: 900; color: #fff;
       font-family: 'Syne', sans-serif;
     }
-    .nav-logo-text { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--n900); }
+    .nav-logo-text {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px; font-weight: 800; color: var(--n900);
+    }
     .nav-badge {
       font-size: 11px; font-weight: 600; color: var(--blue-mid);
       background: rgba(33,150,243,.1); padding: 4px 10px;
@@ -95,7 +102,6 @@
       padding: 120px 5vw 80px;
       text-align: center;
     }
-
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 12px; font-weight: 600; letter-spacing: .8px;
@@ -106,7 +112,6 @@
       margin-bottom: 28px;
       animation: fadeUp .6s ease both;
     }
-
     .hero-title {
       font-family: 'Syne', sans-serif;
       font-size: clamp(44px, 8vw, 88px);
@@ -120,7 +125,6 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
     .hero-sub {
       font-size: clamp(16px, 2.2vw, 20px);
       font-weight: 400; color: var(--n600);
@@ -203,14 +207,12 @@
       font-weight: 800; color: var(--n900);
       margin-bottom: 60px;
     }
-
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       max-width: 1100px; margin: 0 auto;
     }
-
     .feat-card {
       background: #fff;
       border: 1px solid var(--n100);
@@ -228,7 +230,6 @@
     .feat-card:nth-child(3)::before { background: var(--grad-gold); }
     .feat-card:nth-child(4)::before { background: linear-gradient(90deg, #22C55E, #16A34A); }
     .feat-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(0,0,0,.08); }
-
     .feat-icon {
       width: 56px; height: 56px; border-radius: 16px;
       display: flex; align-items: center; justify-content: center;
@@ -238,8 +239,11 @@
     .feat-card:nth-child(2) .feat-icon { background: rgba(124,58,237,.1); }
     .feat-card:nth-child(3) .feat-icon { background: rgba(245,158,11,.1); }
     .feat-card:nth-child(4) .feat-icon { background: rgba(34,197,94,.1); }
-
-    .feat-title { font-family: 'Syne', sans-serif; font-size: 19px; font-weight: 700; color: var(--n900); margin-bottom: 10px; }
+    .feat-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 19px; font-weight: 700; color: var(--n900);
+      margin-bottom: 10px;
+    }
     .feat-desc { font-size: 14px; color: var(--n600); line-height: 1.7; }
     .feat-chip {
       display: inline-block;
@@ -278,7 +282,11 @@
       margin-bottom: 16px;
       box-shadow: 0 8px 24px rgba(0,188,212,.3);
     }
-    .step-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--n900); margin-bottom: 8px; }
+    .step-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px; font-weight: 700; color: var(--n900);
+      margin-bottom: 8px;
+    }
     .step-desc { font-size: 13px; color: var(--n600); line-height: 1.6; }
 
     .cta-section {
@@ -305,8 +313,17 @@
       width: 160px; height: 160px; border-radius: 50%;
       background: rgba(255,255,255,.04);
     }
-    .cta-title { font-family: 'Syne', sans-serif; font-size: clamp(28px, 4vw, 46px); font-weight: 800; color: #fff; margin-bottom: 14px; position: relative; z-index: 1; }
-    .cta-sub { font-size: 17px; color: rgba(255,255,255,.75); margin-bottom: 36px; position: relative; z-index: 1; max-width: 480px; }
+    .cta-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 800; color: #fff;
+      margin-bottom: 14px; position: relative; z-index: 1;
+    }
+    .cta-sub {
+      font-size: 17px; color: rgba(255,255,255,.75);
+      margin-bottom: 36px; position: relative; z-index: 1;
+      max-width: 480px;
+    }
     .btn-download-white {
       display: inline-flex; align-items: center; gap: 12px;
       padding: 18px 44px;
@@ -327,6 +344,7 @@
       font-size: 13px; color: var(--n400);
       border-top: 1px solid var(--n100);
     }
+    footer a { color: var(--blue-vivid); text-decoration: none; }
 
     .toast {
       position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(80px);
@@ -354,38 +372,40 @@
 </head>
 <body>
 
+  <!-- Nav -->
   <nav>
     <a href="#" class="nav-logo">
-      <div class="nav-logo-icon">₹</div>
+      <div class="nav-logo-icon">&#8377;</div>
       <span class="nav-logo-text">MinTask</span>
     </a>
-    <span class="nav-badge">₹49 to Start</span>
+    <span class="nav-badge">Free to Download</span>
   </nav>
 
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-eyebrow">🎉 Earn Real Money with Every Referral</div>
+    <div class="hero-eyebrow">&#127881; Earn Real Money with Every Referral</div>
 
     <div class="ref-banner" id="refBanner">
-      <span class="ref-banner-icon">🎁</span>
+      <span class="ref-banner-icon">&#127873;</span>
       <span>Referral code applied! Download the app to claim your bonus.</span>
     </div>
 
-    <h1 class="hero-title">Refer Friends.<br><span>Earn ₹30</span> Each.</h1>
+    <h1 class="hero-title">Refer Friends.<br><span>Earn &#8377;20</span> Each.</h1>
 
     <p class="hero-sub">
       MinTask is India's simplest earning app.
-      Share your link, get ₹30 per friend who joins — up to 4 levels deep.
+      Share your link, get &#8377;20 per friend who joins &mdash; up to 4 levels deep.
     </p>
 
     <a href="#" class="btn-download" id="downloadBtn" onclick="handleDownload(event)">
-      <span class="btn-download-icon">⬇️</span>
-      Download MinTask — Free
+      <span class="btn-download-icon">&#11015;&#65039;</span>
+      Download MinTask &mdash; Free
     </a>
-    <p class="btn-download-sub">APK · Android · No Play Store needed</p>
+    <p class="btn-download-sub">APK &middot; Android &middot; No Play Store needed</p>
 
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-val">₹30</div>
+        <div class="hero-stat-val">&#8377;20</div>
         <div class="hero-stat-label">Per Referral</div>
       </div>
       <div class="hero-stats-divider"></div>
@@ -401,46 +421,47 @@
     </div>
   </section>
 
+  <!-- Features -->
   <section class="features">
     <p class="section-label">Why MinTask?</p>
     <h2 class="section-title">Everything you need to earn</h2>
     <div class="features-grid">
 
       <div class="feat-card">
-        <div class="feat-icon">💸</div>
+        <div class="feat-icon">&#128184;</div>
         <div class="feat-title">Instant Referral Earnings</div>
         <p class="feat-desc">
-          Earn ₹30 the moment your referred friend activates their account.
-          No delays, no conditions — money lands directly in your wallet.
+          Earn &#8377;20 the moment your referred friend activates their account.
+          No delays, no conditions &mdash; money lands directly in your wallet.
         </p>
-        <span class="feat-chip">₹30 per friend</span>
+        <span class="feat-chip">&#8377;20 per friend</span>
       </div>
 
       <div class="feat-card">
-        <div class="feat-icon">👑</div>
+        <div class="feat-icon">&#128081;</div>
         <div class="feat-title">4-Level Deep Earning</div>
         <p class="feat-desc">
-          With our Tier Plan, earn from your friends' friends — up to 4 levels.
-          L2 earns ₹2, L3 earns ₹1, L4 earns ₹0.50 per activation automatically.
+          With our Tier Plan, earn from your friends' friends &mdash; up to 4 levels.
+          L2 earns &#8377;2, L3 earns &#8377;1, L4 earns &#8377;0.50 per activation automatically.
         </p>
         <span class="feat-chip">Passive income</span>
       </div>
 
       <div class="feat-card">
-        <div class="feat-icon">⚡</div>
+        <div class="feat-icon">&#9889;</div>
         <div class="feat-title">Instant UPI Withdrawals</div>
         <p class="feat-desc">
-          Withdraw your earnings directly to any UPI ID — GPay, PhonePe, Paytm.
+          Withdraw your earnings directly to any UPI ID &mdash; GPay, PhonePe, Paytm.
           Fast processing, straight to your account.
         </p>
         <span class="feat-chip">Any UPI app</span>
       </div>
 
       <div class="feat-card">
-        <div class="feat-icon">🔒</div>
-        <div class="feat-title">Safe & Transparent</div>
+        <div class="feat-icon">&#128274;</div>
+        <div class="feat-title">Safe &amp; Transparent</div>
         <p class="feat-desc">
-          Powered by Firebase — all balances, referrals and withdrawals are
+          Powered by Firebase &mdash; all balances, referrals and withdrawals are
           stored securely in real-time. Your money is always visible and protected.
         </p>
         <span class="feat-chip">Firebase secured</span>
@@ -449,6 +470,7 @@
     </div>
   </section>
 
+  <!-- How it works -->
   <section class="how">
     <p class="section-label">Simple as 1-2-3</p>
     <h2 class="section-title">How it works</h2>
@@ -465,32 +487,38 @@
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div class="step-title">Share & Earn</div>
-        <p class="step-desc">Share your link. Get ₹30 for every friend who joins and activates!</p>
+        <div class="step-title">Share &amp; Earn</div>
+        <p class="step-desc">Share your link. Get &#8377;20 for every friend who joins and activates!</p>
       </div>
     </div>
   </section>
 
+  <!-- Bottom CTA -->
   <section class="cta-section">
     <div class="cta-card">
       <h2 class="cta-title">Start Earning Today</h2>
       <p class="cta-sub">Join thousands of users earning real money with MinTask. Free download, instant setup.</p>
       <a href="#" class="btn-download-white" id="downloadBtn2" onclick="handleDownload(event)">
-        ⬇️ &nbsp;Download MinTask Free
+        &#11015;&#65039; &nbsp;Download MinTask Free
       </a>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 MinTask · Refer. Earn. Repeat. &nbsp;|&nbsp; <a href="mailto:support@mintask.app" style="color:var(--blue-vivid);text-decoration:none;">support@mintask.app</a></p>
+    <p>&copy; 2025 MinTask &middot; Refer. Earn. Repeat. &nbsp;|&nbsp;
+      <a href="mailto:support@mintytask.online">support@mintytask.online</a>
+    </p>
   </footer>
 
+  <!-- Toast -->
   <div class="toast" id="toast"></div>
 
+  <!-- Firebase + Referral Logic -->
   <script>
-    // ════════════════════════════════════════════════════════════════════
-    //  🔧 CONFIG — Replace with your actual values
-    // ════════════════════════════════════════════════════════════════════
+    // ════════════════════════════════════════════════════════
+    //  CONFIG — Replace with your actual Firebase config
+    // ════════════════════════════════════════════════════════
     const firebaseConfig = {
       apiKey:            "YOUR_API_KEY",
       authDomain:        "YOUR_PROJECT.firebaseapp.com",
@@ -500,17 +528,19 @@
       messagingSenderId: "YOUR_SENDER_ID",
       appId:             "YOUR_APP_ID"
     };
+
+    // APK download URL
     const APK_URL = "https://nakulbusiness91-jpg.github.io/MINTASK/app.apk?v=20260322";
 
-    // ════════════════════════════════════════════════════════════════════
+    // ════════════════════════════════════════════════════════
     //  Firebase Init
-    // ════════════════════════════════════════════════════════════════════
+    // ════════════════════════════════════════════════════════
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
 
-    // ════════════════════════════════════════════════════════════════════
-    //  Read referral code from URL (?ref= or ?code=)
-    // ════════════════════════════════════════════════════════════════════
+    // ════════════════════════════════════════════════════════
+    //  Read ?ref= from URL
+    // ════════════════════════════════════════════════════════
     const params  = new URLSearchParams(window.location.search);
     const refCode = (params.get('ref') || params.get('code') || '').trim().toUpperCase();
 
@@ -518,36 +548,9 @@
       document.getElementById('refBanner').classList.add('visible');
     }
 
-    // ════════════════════════════════════════════════════════════════════
-    //  STEP 1 — Silently copy referral code to clipboard as soon as
-    //           the page loads (triggered on first user interaction so
-    //           browser allows clipboard write).
-    //           The user sees nothing — it happens invisibly.
-    //           The Android app will read clipboard on registration screen.
-    // ════════════════════════════════════════════════════════════════════
-    let clipboardCopied = false;
-
-    async function silentlyCopyRefToClipboard() {
-      if (!refCode || clipboardCopied) return;
-      try {
-        // Format: "MINTASK_REF:XXXXXXXX"  — the app will look for this prefix
-        await navigator.clipboard.writeText('MINTASK_REF:' + refCode);
-        clipboardCopied = true;
-        console.log('Ref code silently copied to clipboard.');
-      } catch (e) {
-        // Clipboard API requires user gesture on some browsers — we try
-        // again on download click which is definitely a user gesture
-        console.warn('Silent clipboard copy failed (will retry on download):', e);
-      }
-    }
-
-    // Try on first touch/click anywhere on page (silent, invisible)
-    document.addEventListener('click', silentlyCopyRefToClipboard, { once: true });
-    document.addEventListener('touchstart', silentlyCopyRefToClipboard, { once: true });
-
-    // ════════════════════════════════════════════════════════════════════
+    // ════════════════════════════════════════════════════════
     //  Toast helper
-    // ════════════════════════════════════════════════════════════════════
+    // ════════════════════════════════════════════════════════
     function showToast(msg) {
       const el = document.getElementById('toast');
       el.textContent = msg;
@@ -555,91 +558,40 @@
       setTimeout(() => el.classList.remove('show'), 3000);
     }
 
-    // ════════════════════════════════════════════════════════════════════
-    //  LAYER 1 — Get visitor IP (same api as Android app)
-    // ════════════════════════════════════════════════════════════════════
+    // ════════════════════════════════════════════════════════
+    //  Get visitor IP
+    // ════════════════════════════════════════════════════════
     async function getIP() {
       try {
-        const res = await fetch('https://api.ipify.org?format=json',
-          { signal: AbortSignal.timeout(5000) });
+        const res  = await fetch('https://api.ipify.org?format=json', { signal: AbortSignal.timeout(5000) });
         const data = await res.json();
         return data.ip || null;
-      } catch (e) { return null; }
-    }
-
-    // ════════════════════════════════════════════════════════════════════
-    //  LAYER 2 — Device fingerprint (screen + browser + timezone + lang)
-    //            This generates the same hash the Android app will also
-    //            compute from the same device properties.
-    // ════════════════════════════════════════════════════════════════════
-    function getDeviceFingerprint() {
-      const raw = [
-        navigator.userAgent,
-        navigator.language,
-        navigator.platform,
-        screen.width + 'x' + screen.height,
-        screen.colorDepth,
-        new Date().getTimezoneOffset(),
-        navigator.hardwareConcurrency || '',
-        navigator.deviceMemory || '',
-        // canvas fingerprint (silent, invisible 1px canvas)
-        (() => {
-          try {
-            const c = document.createElement('canvas');
-            const ctx = c.getContext('2d');
-            ctx.textBaseline = 'top';
-            ctx.font = '14px Arial';
-            ctx.fillText('mintask🔑', 2, 2);
-            return c.toDataURL().slice(-20);
-          } catch (e) { return 'nocanvas'; }
-        })()
-      ].join('||');
-
-      // djb2 hash
-      let hash = 5381;
-      for (let i = 0; i < raw.length; i++) {
-        hash = ((hash << 5) + hash) + raw.charCodeAt(i);
-        hash = hash & hash; // 32-bit
+      } catch (e) {
+        console.warn('IP fetch failed:', e);
+        return null;
       }
-      return Math.abs(hash).toString(36).toUpperCase();
     }
 
-    // ════════════════════════════════════════════════════════════════════
-    //  Save ALL tracking data to Firebase under one unified entry
-    //  linked to the referral code.
-    //
-    //  Firebase structure:
-    //  PendingReferrals/{pushId} = {
-    //    referrerId:   "ABC12345",   ← the referral code (uid prefix)
-    //    ip:           "103.x.x.x", ← for IP match (existing app logic)
-    //    fingerprint:  "XY3Z9A",    ← for device match (new backup)
-    //    timestamp:    1234567890,
-    //    userAgent:    "Mozilla...",
-    //    screen:       "1080x2340",
-    //    language:     "en-IN",
-    //    timezone:     "330"
-    //  }
-    //
-    //  The Android app checks: IP first → fingerprint fallback
-    // ════════════════════════════════════════════════════════════════════
+    // ════════════════════════════════════════════════════════
+    //  Save referral to Firebase Realtime DB
+    //  Path: PendingReferrals/{pushId} = { referrerId, ip, timestamp }
+    // ════════════════════════════════════════════════════════
     async function saveReferralToFirebase(referrerId) {
-      const ip          = await getIP();
-      const fingerprint = getDeviceFingerprint();
+      const ip = await getIP();
+      if (!ip) {
+        console.warn('Could not get IP — referral will not be saved.');
+        return false;
+      }
 
       const entry = {
-        referrerId:  referrerId,
-        ip:          ip || 'unknown',
-        fingerprint: fingerprint,
-        timestamp:   Date.now(),
-        userAgent:   navigator.userAgent.substring(0, 200),
-        screen:      screen.width + 'x' + screen.height,
-        language:    navigator.language,
-        timezone:    String(new Date().getTimezoneOffset())
+        referrerId: referrerId,
+        ip:         ip,
+        timestamp:  Date.now()
       };
 
       try {
         await db.ref('PendingReferrals').push(entry);
-        console.log('✅ Full referral data saved to Firebase:', entry);
+        console.log('Referral saved to Firebase:', entry);
         return true;
       } catch (err) {
         console.error('Firebase write error:', err);
@@ -647,49 +599,37 @@
       }
     }
 
-    // ════════════════════════════════════════════════════════════════════
-    //  Download button handler
-    // ════════════════════════════════════════════════════════════════════
+    // ════════════════════════════════════════════════════════
+    //  Handle Download button click
+    // ════════════════════════════════════════════════════════
     async function handleDownload(event) {
       event.preventDefault();
 
-      showToast('⏳ Preparing download...');
+      showToast('Preparing download...');
 
       if (refCode) {
-        // Force clipboard copy on this definite user gesture
-        try {
-          await navigator.clipboard.writeText('MINTASK_REF:' + refCode);
-          clipboardCopied = true;
-        } catch (e) {
-          console.warn('Clipboard write on download click failed:', e);
-        }
-
-        // Save IP + fingerprint + all device data to Firebase
         try {
           const saved = await saveReferralToFirebase(refCode);
-          showToast(saved ? '✅ Referral linked! Starting download...' : '⬇️ Starting download...');
+          showToast(saved ? 'Referral saved! Starting download...' : 'Starting download...');
         } catch (e) {
-          showToast('⬇️ Starting download...');
+          console.error(e);
+          showToast('Starting download...');
         }
-
         await new Promise(r => setTimeout(r, 800));
       } else {
-        showToast('⬇️ Starting download...');
+        showToast('Starting download...');
         await new Promise(r => setTimeout(r, 500));
       }
 
-      // Trigger APK download with proper attributes
+      // Trigger APK download
       const link = document.createElement('a');
       link.href = APK_URL;
-      link.download = 'mintask.apk';
       link.setAttribute('download', 'mintask.apk');
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-
-      setTimeout(() => showToast('📲 Install the APK to start earning!'), 1200);
     }
   </script>
 
 </body>
-</html
+</html>
