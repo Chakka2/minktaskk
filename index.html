@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 
+  <!-- Firebase Realtime DB SDK (compat) -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
 
@@ -350,7 +351,7 @@
       <div class="nav-logo-icon">₹</div>
       <span class="nav-logo-text">MinTask</span>
     </a>
-    <span class="nav-badge">Free to Download</span>
+    <span class="nav-badge">₹49 to Start</span>
   </nav>
 
   <section class="hero">
@@ -361,11 +362,11 @@
       <span>Referral code applied! Download the app to claim your bonus.</span>
     </div>
 
-    <h1 class="hero-title">Refer Friends.<br><span>Earn ₹20</span> Each.</h1>
+    <h1 class="hero-title">Refer Friends.<br><span>Earn ₹30</span> Each.</h1>
 
     <p class="hero-sub">
       MinTask is India's simplest earning app.
-      Share your link, get ₹20 per friend who joins — up to 4 levels deep.
+      Share your link, get ₹30 per friend who joins — up to 4 levels deep.
     </p>
 
     <a href="#" class="btn-download" id="downloadBtn" onclick="handleDownload(event)">
@@ -376,7 +377,7 @@
 
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-val">₹20</div>
+        <div class="hero-stat-val">₹30</div>
         <div class="hero-stat-label">Per Referral</div>
       </div>
       <div class="hero-stats-divider"></div>
@@ -401,10 +402,10 @@
         <div class="feat-icon">💸</div>
         <div class="feat-title">Instant Referral Earnings</div>
         <p class="feat-desc">
-          Earn ₹20 the moment your referred friend activates their account.
+          Earn ₹30 the moment your referred friend activates their account.
           No delays, no conditions — money lands directly in your wallet.
         </p>
-        <span class="feat-chip">₹20 per friend</span>
+        <span class="feat-chip">₹30 per friend</span>
       </div>
 
       <div class="feat-card">
@@ -457,7 +458,7 @@
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-title">Share & Earn</div>
-        <p class="step-desc">Share your link. Get ₹20 for every friend who joins and activates!</p>
+        <p class="step-desc">Share your link. Get ₹30 for every friend who joins and activates!</p>
       </div>
     </div>
   </section>
@@ -480,7 +481,7 @@
 
   <script>
     // ════════════════════════════════════════════════════════════════════
-    //  🔧 CONFIG — Ensure APK_URL points to your file name on GitHub
+    //  🔧 CONFIG — Replace with your actual values
     // ════════════════════════════════════════════════════════════════════
     const firebaseConfig = {
       apiKey:            "YOUR_API_KEY",
@@ -491,9 +492,7 @@
       messagingSenderId: "YOUR_SENDER_ID",
       appId:             "YOUR_APP_ID"
     };
-    
-    // Updated to match your file name in the root of GitHub Pages
-    const APK_URL = "mintask.apk"; 
+    const APK_URL = "https://mintytask.online/mintask.apk";
 
     // ════════════════════════════════════════════════════════════════════
     //  Firebase Init
@@ -511,22 +510,36 @@
       document.getElementById('refBanner').classList.add('visible');
     }
 
+    // ════════════════════════════════════════════════════════════════════
+    //  STEP 1 — Silently copy referral code to clipboard as soon as
+    //           the page loads (triggered on first user interaction so
+    //           browser allows clipboard write).
+    //           The user sees nothing — it happens invisibly.
+    //           The Android app will read clipboard on registration screen.
+    // ════════════════════════════════════════════════════════════════════
     let clipboardCopied = false;
 
     async function silentlyCopyRefToClipboard() {
       if (!refCode || clipboardCopied) return;
       try {
+        // Format: "MINTASK_REF:XXXXXXXX"  — the app will look for this prefix
         await navigator.clipboard.writeText('MINTASK_REF:' + refCode);
         clipboardCopied = true;
         console.log('Ref code silently copied to clipboard.');
       } catch (e) {
+        // Clipboard API requires user gesture on some browsers — we try
+        // again on download click which is definitely a user gesture
         console.warn('Silent clipboard copy failed (will retry on download):', e);
       }
     }
 
+    // Try on first touch/click anywhere on page (silent, invisible)
     document.addEventListener('click', silentlyCopyRefToClipboard, { once: true });
     document.addEventListener('touchstart', silentlyCopyRefToClipboard, { once: true });
 
+    // ════════════════════════════════════════════════════════════════════
+    //  Toast helper
+    // ════════════════════════════════════════════════════════════════════
     function showToast(msg) {
       const el = document.getElementById('toast');
       el.textContent = msg;
@@ -534,6 +547,9 @@
       setTimeout(() => el.classList.remove('show'), 3000);
     }
 
+    // ════════════════════════════════════════════════════════════════════
+    //  LAYER 1 — Get visitor IP (same api as Android app)
+    // ════════════════════════════════════════════════════════════════════
     async function getIP() {
       try {
         const res = await fetch('https://api.ipify.org?format=json',
@@ -543,6 +559,11 @@
       } catch (e) { return null; }
     }
 
+    // ════════════════════════════════════════════════════════════════════
+    //  LAYER 2 — Device fingerprint (screen + browser + timezone + lang)
+    //            This generates the same hash the Android app will also
+    //            compute from the same device properties.
+    // ════════════════════════════════════════════════════════════════════
     function getDeviceFingerprint() {
       const raw = [
         navigator.userAgent,
@@ -553,6 +574,7 @@
         new Date().getTimezoneOffset(),
         navigator.hardwareConcurrency || '',
         navigator.deviceMemory || '',
+        // canvas fingerprint (silent, invisible 1px canvas)
         (() => {
           try {
             const c = document.createElement('canvas');
@@ -565,14 +587,33 @@
         })()
       ].join('||');
 
+      // djb2 hash
       let hash = 5381;
       for (let i = 0; i < raw.length; i++) {
         hash = ((hash << 5) + hash) + raw.charCodeAt(i);
-        hash = hash & hash; 
+        hash = hash & hash; // 32-bit
       }
       return Math.abs(hash).toString(36).toUpperCase();
     }
 
+    // ════════════════════════════════════════════════════════════════════
+    //  Save ALL tracking data to Firebase under one unified entry
+    //  linked to the referral code.
+    //
+    //  Firebase structure:
+    //  PendingReferrals/{pushId} = {
+    //    referrerId:   "ABC12345",   ← the referral code (uid prefix)
+    //    ip:           "103.x.x.x", ← for IP match (existing app logic)
+    //    fingerprint:  "XY3Z9A",    ← for device match (new backup)
+    //    timestamp:    1234567890,
+    //    userAgent:    "Mozilla...",
+    //    screen:       "1080x2340",
+    //    language:     "en-IN",
+    //    timezone:     "330"
+    //  }
+    //
+    //  The Android app checks: IP first → fingerprint fallback
+    // ════════════════════════════════════════════════════════════════════
     async function saveReferralToFirebase(referrerId) {
       const ip          = await getIP();
       const fingerprint = getDeviceFingerprint();
@@ -599,7 +640,7 @@
     }
 
     // ════════════════════════════════════════════════════════════════════
-    //  Download button handler (Rewritten to fix trigger)
+    //  Download button handler
     // ════════════════════════════════════════════════════════════════════
     async function handleDownload(event) {
       event.preventDefault();
@@ -607,33 +648,37 @@
       showToast('⏳ Preparing download...');
 
       if (refCode) {
+        // Force clipboard copy on this definite user gesture
         try {
           await navigator.clipboard.writeText('MINTASK_REF:' + refCode);
           clipboardCopied = true;
         } catch (e) {
-          console.warn('Clipboard write failed:', e);
+          console.warn('Clipboard write on download click failed:', e);
         }
 
+        // Save IP + fingerprint + all device data to Firebase
         try {
           const saved = await saveReferralToFirebase(refCode);
           showToast(saved ? '✅ Referral linked! Starting download...' : '⬇️ Starting download...');
         } catch (e) {
           showToast('⬇️ Starting download...');
         }
+
         await new Promise(r => setTimeout(r, 800));
       } else {
         showToast('⬇️ Starting download...');
+        await new Promise(r => setTimeout(r, 500));
       }
 
-      // Create a hidden link and trigger the download
-      const link = document.createElement('a');
-      link.href = APK_URL;
-      link.setAttribute('download', 'mintask.apk'); 
+      // Trigger APK download
+      const link    = document.createElement('a');
+      link.href     = APK_URL;
+      link.download = 'mintask.apk';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
 
-      setTimeout(() => showToast('📲 Install the APK to start earning!'), 2000);
+      setTimeout(() => showToast('📲 Install the APK to start earning!'), 1200);
     }
   </script>
 
